@@ -16,7 +16,7 @@ public class sqlLexer extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SELECT=1, FROM=2, WHERE=3, CREATE=4, DELETE=5, BETWEEN=6, ORDEN_BY=7, 
+		SELECT=1, FROM=2, WHERE=3, CREATE=4, DELETE=5, BETWEEN=6, ORDER_BY=7, 
 		GROUP_BY=8, LEFT_JOIN=9, INNER_JOIN=10, RIGHT_JOIN=11, IN=12, ON=13, INTEGER=14, 
 		VARCHAR=15, DESC=16, ASC=17, AND=18, OR=19, NOT=20, PAR_OPEN=21, PAR_CLOUSE=22, 
 		EQ=23, GT=24, LT=25, GEQ=26, LEQ=27, DOT=28, COMA=29, PUNTOCOMA=30, WC=31, 
@@ -31,7 +31,7 @@ public class sqlLexer extends Lexer {
 
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"SELECT", "FROM", "WHERE", "CREATE", "DELETE", "BETWEEN", "ORDEN_BY", 
+			"SELECT", "FROM", "WHERE", "CREATE", "DELETE", "BETWEEN", "ORDER_BY", 
 			"GROUP_BY", "LEFT_JOIN", "INNER_JOIN", "RIGHT_JOIN", "IN", "ON", "INTEGER", 
 			"VARCHAR", "DESC", "ASC", "AND", "OR", "NOT", "PAR_OPEN", "PAR_CLOUSE", 
 			"EQ", "GT", "LT", "GEQ", "LEQ", "DOT", "COMA", "PUNTOCOMA", "WC", "STRING", 
@@ -50,7 +50,7 @@ public class sqlLexer extends Lexer {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "SELECT", "FROM", "WHERE", "CREATE", "DELETE", "BETWEEN", "ORDEN_BY", 
+			null, "SELECT", "FROM", "WHERE", "CREATE", "DELETE", "BETWEEN", "ORDER_BY", 
 			"GROUP_BY", "LEFT_JOIN", "INNER_JOIN", "RIGHT_JOIN", "IN", "ON", "INTEGER", 
 			"VARCHAR", "DESC", "ASC", "AND", "OR", "NOT", "PAR_OPEN", "PAR_CLOUSE", 
 			"EQ", "GT", "LT", "GEQ", "LEQ", "DOT", "COMA", "PUNTOCOMA", "WC", "STRING", 
@@ -147,14 +147,14 @@ public class sqlLexer extends Lexer {
 		"\3\'\4\u016b\u0173\2(\3\3\5\4\7\5\t\6\13\7\r\b\17\t\21\n\23\13\25\f\27"+
 		"\r\31\16\33\17\35\20\37\21!\22#\23%\24\'\25)\26+\27-\30/\31\61\32\63\33"+
 		"\65\34\67\359\36;\37= ?!A\"C#E$G%I&K\2M\2\3\2\5\6\2\13\f\17\17\"\"))\3"+
-		"\2\62;\4\2C\\c|\2\u01ae\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2\2\2\2\t\3\2\2"+
-		"\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2\23\3\2\2\2\2\25"+
-		"\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2\2\2\37\3\2"+
-		"\2\2\2!\3\2\2\2\2#\3\2\2\2\2%\3\2\2\2\2\'\3\2\2\2\2)\3\2\2\2\2+\3\2\2"+
-		"\2\2-\3\2\2\2\2/\3\2\2\2\2\61\3\2\2\2\2\63\3\2\2\2\2\65\3\2\2\2\2\67\3"+
-		"\2\2\2\29\3\2\2\2\2;\3\2\2\2\2=\3\2\2\2\2?\3\2\2\2\2A\3\2\2\2\2C\3\2\2"+
-		"\2\2E\3\2\2\2\2G\3\2\2\2\2I\3\2\2\2\3[\3\2\2\2\5e\3\2\2\2\7q\3\2\2\2\t"+
-		"\177\3\2\2\2\13\u008d\3\2\2\2\r\u009d\3\2\2\2\17\u00af\3\2\2\2\21\u00c1"+
+		"\2\62;\5\2C\\aac|\2\u01ae\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2\2\2\2\t\3\2"+
+		"\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2\23\3\2\2\2\2"+
+		"\25\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2\2\2\37\3"+
+		"\2\2\2\2!\3\2\2\2\2#\3\2\2\2\2%\3\2\2\2\2\'\3\2\2\2\2)\3\2\2\2\2+\3\2"+
+		"\2\2\2-\3\2\2\2\2/\3\2\2\2\2\61\3\2\2\2\2\63\3\2\2\2\2\65\3\2\2\2\2\67"+
+		"\3\2\2\2\29\3\2\2\2\2;\3\2\2\2\2=\3\2\2\2\2?\3\2\2\2\2A\3\2\2\2\2C\3\2"+
+		"\2\2\2E\3\2\2\2\2G\3\2\2\2\2I\3\2\2\2\3[\3\2\2\2\5e\3\2\2\2\7q\3\2\2\2"+
+		"\t\177\3\2\2\2\13\u008d\3\2\2\2\r\u009d\3\2\2\2\17\u00af\3\2\2\2\21\u00c1"+
 		"\3\2\2\2\23\u00d5\3\2\2\2\25\u00eb\3\2\2\2\27\u0101\3\2\2\2\31\u0107\3"+
 		"\2\2\2\33\u010d\3\2\2\2\35\u0115\3\2\2\2\37\u0125\3\2\2\2!\u012f\3\2\2"+
 		"\2#\u0137\3\2\2\2%\u013f\3\2\2\2\'\u0145\3\2\2\2)\u014d\3\2\2\2+\u014f"+
@@ -179,9 +179,9 @@ public class sqlLexer extends Lexer {
 		"\7v\2\2\u0099\u009a\7y\2\2\u009a\u009b\7g\2\2\u009b\u009c\7g\2\2\u009c"+
 		"\u009e\7p\2\2\u009d\u008f\3\2\2\2\u009d\u0096\3\2\2\2\u009e\16\3\2\2\2"+
 		"\u009f\u00a0\7Q\2\2\u00a0\u00a1\7T\2\2\u00a1\u00a2\7F\2\2\u00a2\u00a3"+
-		"\7G\2\2\u00a3\u00a4\7P\2\2\u00a4\u00a5\7\"\2\2\u00a5\u00a6\7D\2\2\u00a6"+
+		"\7G\2\2\u00a3\u00a4\7T\2\2\u00a4\u00a5\7\"\2\2\u00a5\u00a6\7D\2\2\u00a6"+
 		"\u00b0\7[\2\2\u00a7\u00a8\7q\2\2\u00a8\u00a9\7t\2\2\u00a9\u00aa\7f\2\2"+
-		"\u00aa\u00ab\7g\2\2\u00ab\u00ac\7p\2\2\u00ac\u00ad\7\"\2\2\u00ad\u00ae"+
+		"\u00aa\u00ab\7g\2\2\u00ab\u00ac\7t\2\2\u00ac\u00ad\7\"\2\2\u00ad\u00ae"+
 		"\7d\2\2\u00ae\u00b0\7{\2\2\u00af\u009f\3\2\2\2\u00af\u00a7\3\2\2\2\u00b0"+
 		"\20\3\2\2\2\u00b1\u00b2\7I\2\2\u00b2\u00b3\7T\2\2\u00b3\u00b4\7Q\2\2\u00b4"+
 		"\u00b5\7W\2\2\u00b5\u00b6\7R\2\2\u00b6\u00b7\7\"\2\2\u00b7\u00b8\7D\2"+

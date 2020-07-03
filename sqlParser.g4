@@ -2,15 +2,15 @@ parser grammar sqlParser;
 
 options {tokenVocab=sqlLexer;}
 
-sentencia:select | create_table | delete | update   ;
+sentencia:(select | create_table | delete | update)+   ;
 select: SELECT column FROM tabla opcion? ';';
 create_table: ID '(' columna type ( ','columna type )*')'';';
 delete: DELETE FROM tabla (WHERE clausula)?';';
 update: UPDATE tabla SET condicion(',' condicion) WHERE condicion(','condicion)';';
 
 opcion: where
-        |inner tabla ON column EQ column
-        |ORDEN_BY (column (DESC|ASC)?)+;
+        |inner tabla ON column EQ column(opcion)?
+        |ORDER_BY (column (DESC|ASC)?)+;
 
 where:  WHERE clausula
         |WHERE column NOT? BETWEEN ID var AND var
@@ -19,7 +19,7 @@ where:  WHERE clausula
 
 inner:  INNER_JOIN
         | LEFT_JOIN
-        | RIGH_JOIN ;
+        | RIGHT_JOIN ;
 
 clausula: condicion (operador condicion)*
          |condicion (operador clausula)*

@@ -6,7 +6,7 @@ WHERE:'WHERE' | 'where';
 CREATE:'CREATE'|'create';
 DELETE:'DELETE'|'delete' ;
 BETWEEN:'BETWEEN'|'between';
-ORDEN_BY:'ORDEN BY'|'orden by';
+ORDER_BY:'ORDER BY'|'order by';
 GROUP_BY:'GROUP BY'|'group by';
 LEFT_JOIN:'LEFT JOIN'|'left join';
 INNER_JOIN:'INNER JOIN'|'inner join';
@@ -39,4 +39,4 @@ FLOAT: DIGIT+ '.' DIGIT+ ;
 
 WS:[' '\n\r\t]->skip;
 fragment DIGIT:[0-9];
-fragment CHAR:[a-zA-Z];
+fragment CHAR:[a-zA-Z_];

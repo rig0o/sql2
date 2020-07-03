@@ -7,6 +7,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface sqlParserListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link sqlParser#sentencia}.
+	 * @param ctx the parse tree
+	 */
+	void enterSentencia(sqlParser.SentenciaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#sentencia}.
+	 * @param ctx the parse tree
+	 */
+	void exitSentencia(sqlParser.SentenciaContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link sqlParser#select}.
 	 * @param ctx the parse tree
 	 */
@@ -16,6 +26,86 @@ public interface sqlParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSelect(sqlParser.SelectContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#create_table}.
+	 * @param ctx the parse tree
+	 */
+	void enterCreate_table(sqlParser.Create_tableContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#create_table}.
+	 * @param ctx the parse tree
+	 */
+	void exitCreate_table(sqlParser.Create_tableContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#delete}.
+	 * @param ctx the parse tree
+	 */
+	void enterDelete(sqlParser.DeleteContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#delete}.
+	 * @param ctx the parse tree
+	 */
+	void exitDelete(sqlParser.DeleteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#update}.
+	 * @param ctx the parse tree
+	 */
+	void enterUpdate(sqlParser.UpdateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#update}.
+	 * @param ctx the parse tree
+	 */
+	void exitUpdate(sqlParser.UpdateContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#opcion}.
+	 * @param ctx the parse tree
+	 */
+	void enterOpcion(sqlParser.OpcionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#opcion}.
+	 * @param ctx the parse tree
+	 */
+	void exitOpcion(sqlParser.OpcionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#where}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhere(sqlParser.WhereContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#where}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhere(sqlParser.WhereContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#inner}.
+	 * @param ctx the parse tree
+	 */
+	void enterInner(sqlParser.InnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#inner}.
+	 * @param ctx the parse tree
+	 */
+	void exitInner(sqlParser.InnerContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#clausula}.
+	 * @param ctx the parse tree
+	 */
+	void enterClausula(sqlParser.ClausulaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#clausula}.
+	 * @param ctx the parse tree
+	 */
+	void exitClausula(sqlParser.ClausulaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#like}.
+	 * @param ctx the parse tree
+	 */
+	void enterLike(sqlParser.LikeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#like}.
+	 * @param ctx the parse tree
+	 */
+	void exitLike(sqlParser.LikeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link sqlParser#column}.
 	 * @param ctx the parse tree
@@ -47,16 +137,6 @@ public interface sqlParserListener extends ParseTreeListener {
 	 */
 	void exitTabla(sqlParser.TablaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link sqlParser#clausula}.
-	 * @param ctx the parse tree
-	 */
-	void enterClausula(sqlParser.ClausulaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link sqlParser#clausula}.
-	 * @param ctx the parse tree
-	 */
-	void exitClausula(sqlParser.ClausulaContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link sqlParser#condicion}.
 	 * @param ctx the parse tree
 	 */
@@ -76,6 +156,16 @@ public interface sqlParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVar(sqlParser.VarContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link sqlParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void enterType(sqlParser.TypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link sqlParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void exitType(sqlParser.TypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link sqlParser#operador}.
 	 * @param ctx the parse tree
