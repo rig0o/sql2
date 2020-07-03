@@ -4,7 +4,7 @@ options {tokenVocab=sqlLexer;}
 
 sentencia:(select | create_table | delete | update)+   ;
 select: SELECT column FROM tabla opcion? ';';
-create_table: ID '(' columna type ( ','columna type )*')'';';
+create_table: CREATE_TABLE tabla '(' columna type ( ','columna type )*')'';';
 delete: DELETE FROM tabla (WHERE clausula)?';';
 update: UPDATE tabla SET condicion(',' condicion) WHERE condicion(','condicion)';';
 
@@ -13,7 +13,7 @@ opcion: where
         |ORDER_BY (column (DESC|ASC)?)+;
 
 where:  WHERE clausula
-        |WHERE column NOT? BETWEEN ID var AND var
+        |WHERE column NOT? BETWEEN   var AND var opcion?
         |WHERE column like
         |WHERE column IN '(' STRING(','STRING)*')';
 

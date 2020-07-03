@@ -5,7 +5,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
 
 public class Launch {
-    public static void main(String argc[]){
+    public static void main(String argc[] ){
         try{
             String source = "test.txt";
             CharStream cs = fromFileName(source);

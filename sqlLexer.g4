@@ -3,7 +3,7 @@ lexer grammar sqlLexer;
 SELECT:'SELECT' | 'select';
 FROM: 'FROM' | 'from';
 WHERE:'WHERE' | 'where';
-CREATE:'CREATE'|'create';
+CREATE_TABLE:'CREATE TABLE'|'create table';
 DELETE:'DELETE'|'delete' ;
 BETWEEN:'BETWEEN'|'between';
 ORDER_BY:'ORDER BY'|'order by';
